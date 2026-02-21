@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-secondary: #a855f7;
+  --color-accent: #14b8a6;
+  
+  --color-background: #030014;
+  --color-surface: #0f172a;
+  --color-surface-hover: #1e293b;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+    color: #ffffff;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply antialiased overflow-x-hidden selection:bg-primary/30 selection:text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-surface/50 backdrop-blur-md border border-white/5 hover:border-white/10 transition-all duration-300;
+  }
+}
