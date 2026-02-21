@@ -58,7 +58,7 @@ export const portfolioData = {
       longDescription: "Led the development of a flight delay prediction model using historical flight data. Implemented feature engineering and selection to improve model performance. Utilized scikit-learn for model training and evaluation, achieving 90% accuracy in predicting flight delays. Collaborated with data scientists to fine-tune model parameters and optimize performance.",
       techStack: ["Python", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "React", "Javascript", "Tailwind CSS"],
       link: "#",
-      github: "https://github.com/no-c-123/AeroPredictAI",
+      github: "https://github.com/no-c-123/AeroPredict",
       image: "/AeroPredict.png"
     }
   ],

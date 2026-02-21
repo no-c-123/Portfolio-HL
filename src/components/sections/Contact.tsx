@@ -35,9 +35,6 @@ export const Contact: React.FC = () => {
           <a href={portfolioData.personal.socials.github} className="text-gray-500 hover:text-white transition-colors">
             <Github size={24} />
           </a>
-          <a href={portfolioData.personal.socials.twitter} className="text-gray-500 hover:text-white transition-colors">
-            <Twitter size={24} />
-          </a>
           <a href={portfolioData.personal.socials.linkedin} className="text-gray-500 hover:text-white transition-colors">
             <Linkedin size={24} />
           </a>
