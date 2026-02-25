@@ -3,10 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { cn } from '../../lib/utils';
 import { Menu, X } from 'lucide-react';
+import { ProfileToggle } from './ProfileToggle';
+import { LanguageToggle } from './LanguageToggle';
+import { useStore } from '@nanostores/react';
+import { languageStore } from '../../stores/languageStore';
+import { portfolioData } from '../../data/portfolio';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const language = useStore(languageStore);
+  const ui = portfolioData[language].ui;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,10 +25,10 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Projects', href: '#projects' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: ui.nav.projects, href: '#projects' },
+    { name: ui.nav.about, href: '#about' },
+    { name: ui.nav.skills, href: '#skills' },
+    { name: ui.nav.contact, href: '#contact' },
   ];
 
   return (
@@ -41,6 +48,7 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
+          <ProfileToggle />
           {navLinks.map((link) => (
             <a 
               key={link.name} 
@@ -51,8 +59,9 @@ export const Navbar: React.FC = () => {
             </a>
           ))}
           <Button href="#contact" size="sm" variant="primary">
-            Hire Me
+            {ui.hireMe}
           </Button>
+          <LanguageToggle />
         </div>
 
         {/* Mobile Menu Button */}
@@ -74,6 +83,10 @@ export const Navbar: React.FC = () => {
             className="md:hidden bg-surface/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
+              <div className="flex justify-center mb-4 gap-4">
+                <ProfileToggle />
+                <LanguageToggle />
+              </div>
               {navLinks.map((link) => (
                 <a 
                   key={link.name} 
@@ -85,7 +98,7 @@ export const Navbar: React.FC = () => {
                 </a>
               ))}
               <Button href="#contact" className="w-full mt-4">
-                Hire Me
+                {ui.hireMe}
               </Button>
             </div>
           </motion.div>

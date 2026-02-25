@@ -1,13 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { portfolioData } from '../../data/portfolio';
-import { ArrowRight, ChevronDown } from 'lucide-react';
-import { cn } from '../../lib/utils';
+import { ArrowRight, ChevronDown, Download, Eye } from 'lucide-react';
+import { useStore } from '@nanostores/react';
+import { profileStore } from '../../stores/profileStore';
+import { languageStore } from '../../stores/languageStore';
+import { ResumeModal } from '../ui/ResumeModal';
 
 export const Hero: React.FC = () => {
+  const profile = useStore(profileStore);
+  const language = useStore(languageStore);
+  const data = portfolioData[language];
+  const currentData = data.profiles[profile];
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section className="min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
+      <ResumeModal 
+        isOpen={isResumeOpen} 
+        onClose={() => setIsResumeOpen(false)} 
+        resumeUrl={currentData.resumeLink} 
+      />
+
       {/* Background Gradient Mesh */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-primary/10 blur-[120px] animate-pulse" />
@@ -22,26 +37,34 @@ export const Hero: React.FC = () => {
           className="mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-300 backdrop-blur-sm"
         >
           <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-          Available for new projects
+          {data.ui.available}
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
-        >
-          I build <span className="text-gradient">intelligent systems</span> and scalable products.
-        </motion.h1>
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={`${profile}-${language}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          >
+            {currentData.tagline}
+          </motion.h1>
+        </AnimatePresence>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl leading-relaxed"
-        >
-          {portfolioData.personal.title} building production-ready AI tools and high-performance web applications.
-        </motion.p>
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={`${profile}-${language}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl leading-relaxed"
+          >
+            {currentData.summary}
+          </motion.p>
+        </AnimatePresence>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,11 +73,16 @@ export const Hero: React.FC = () => {
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
         >
           <Button href="#projects" size="lg" className="group">
-            View Projects
+            {data.ui.viewProjects}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button href="#contact" variant="outline" size="lg">
-            Book a Call
+          <Button 
+            onClick={() => setIsResumeOpen(true)} 
+            variant="outline" 
+            size="lg"
+          >
+            <Eye className="mr-2 h-4 w-4" />
+            {data.ui.viewResume}
           </Button>
         </motion.div>
       </div>
