@@ -242,14 +242,14 @@ export const portfolioData: Record<Language, PortfolioContent> = {
         tags: ["frontend", "fullstack"]
       },
       {
-        title: "ML Prediction Model",
-        description: "Developed a machine learning model to predict flight delays with 90% accuracy, reducing flight cancellations by 20%.",
-        longDescription: "Led the development of a flight delay prediction model using historical flight data. Implemented feature engineering and selection to improve model performance. Utilized scikit-learn for model training and evaluation, achieving 90% accuracy in predicting flight delays. Collaborated with data scientists to fine-tune model parameters and optimize performance.",
-        techStack: ["Python", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "React", "Javascript", "Tailwind CSS"],
-        link: "#",
-        github: "https://github.com/no-c-123/AeroPredict",
-        image: "/AeroPredict.png",
-        tags: ["fullstack"]
+        title: "Girokiq – Infinite Canvas Note-Taking App",
+        description: "Modern browser-based note-taking platform designed for fast, fluid handwriting and diagram creation.",
+        longDescription: "Developed a browser-based infinite canvas note-taking application focused on performance and fluid handwriting. Implemented optimized stroke rendering and efficient data structures to support thousands of strokes while maintaining smooth interaction. Designed a minimal interface for distraction-free writing and deployed the platform on scalable cloud infrastructure.",
+        techStack: ["Web Application", "Canvas Rendering", "Performance Optimization", "UX/UI Design", "Cloud Deployment", "Real-Time Drawing Engine", "Infinite Canvas Architecture", "Frontend Engineering"],
+        link: "https://girokiq.app",
+        github: "#",
+        image: "/GirokIQ.png",
+        tags: ["fullstack", "frontend"]
       }
     ]
   },
@@ -372,14 +372,14 @@ export const portfolioData: Record<Language, PortfolioContent> = {
         tags: ["frontend", "fullstack"]
       },
       {
-        title: "Modelo de Predicción ML",
-        description: "Desarrollé un modelo de ML para predecir retrasos de vuelos con 90% de precisión.",
-        longDescription: "Lideré el desarrollo de un modelo de predicción de retrasos de vuelos utilizando datos históricos. Implementé ingeniería y selección de características para mejorar el rendimiento del modelo. Utilicé scikit-learn para entrenamiento y evaluación, logrando 90% de precisión. Colaboré con científicos de datos para ajustar parámetros y optimizar el rendimiento.",
-        techStack: ["Python", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "React", "Javascript", "Tailwind CSS"],
-        link: "#",
-        github: "https://github.com/no-c-123/AeroPredict",
-        image: "/AeroPredict.png",
-        tags: ["fullstack"]
+        title: "Girokiq – Infinite Canvas Note-Taking App",
+        description: "Modern browser-based note-taking platform designed for fast, fluid handwriting and diagram creation.",
+        longDescription: "Developed a high-performance web application for visual note-taking using an infinite canvas architecture. Girokiq allows users to freely write, sketch, and organize ideas in a fluid workspace optimized for long sessions and thousands of strokes. Implemented real-time stroke rendering, canvas virtualization, and efficient stroke data management to maintain smooth performance even with large drawings. Designed a minimal and distraction-free interface focused on productivity, with responsive interaction handling for stylus, trackpad, and mouse input. Built using modern web technologies and deployed through scalable cloud infrastructure to ensure reliability and fast global access.\n\n⚡ Key Impact: Smooth infinite-canvas performance & scalable drawing architecture",
+        techStack: ["Web Application", "Canvas Rendering", "Performance Optimization", "UX/UI Design", "Cloud Deployment", "Real-Time Drawing Engine", "Infinite Canvas Architecture", "Frontend Engineering"],
+        link: "https://girokiq.app",
+        github: "#",
+        image: "/GirokIQ.png",
+        tags: ["fullstack", "frontend"]
       }
     ]
   }
