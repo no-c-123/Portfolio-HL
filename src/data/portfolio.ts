@@ -188,14 +188,14 @@ export const portfolioData: Record<Language, PortfolioContent> = {
       fullstack: {
         title: "Full-Stack Developer & ML Engineer",
         tagline: "I build intelligent systems and scalable products.",
-        resumeLink: "/resumes/Hector%20Leal%20Fullstack%20CV.pdf",
+        resumeLink: "/resumes/Hector%20Leal%20CV.pdf",
         summary: "Software Engineering student with 3+ years of experience building scalable web applications and production systems with React and TypeScript.",
         philosophy: "I focus on performance, UX, and scalability. My approach combines rigorous engineering principles with modern design aesthetics to create products that not only work flawlessly but also delight users."
       },
       frontend: {
         title: "Frontend Developer",
         tagline: "I craft pixel-perfect, high-performance user experiences.",
-        resumeLink: "/resumes/Hector%20Leal%20Fullstack%20CV.pdf",
+        resumeLink: "/resumes/Hector%20Leal%20CV.pdf",
         summary: "Frontend Developer specialized in building accessible, responsive, and performant web interfaces using the React ecosystem and modern CSS.",
         philosophy: "User experience is paramount. I believe in writing semantic, accessible code that provides the best possible experience for all users, regardless of their device or capabilities."
       }
@@ -222,16 +222,6 @@ export const portfolioData: Record<Language, PortfolioContent> = {
         tags: ["fullstack", "frontend"]
       },
       {
-        title: "SnapLink",
-        description: "High-performance URL management system with advanced analytics capabilities.",
-        longDescription: "Engineered high-performance URL management system with advanced analytics capabilities. Implemented Redis caching mechanisms and database query optimization, achieving 60% latency reduction. Designed scalable architecture supporting bulk URL processing for 1000+ concurrent operations. Collaborated with UX team to create intuitive analytics dashboard with real-time performance metrics.",
-        techStack: ["Redis", "Database Optimization", "Scalable Architecture", "Analytics"],
-        link: "https://link-shortener-rouge-omega.vercel.app/",
-        github: "https://github.com/no-c-123/link-shortener",
-        image: "/snaplink.png",
-        tags: ["fullstack"]
-      },
-      {
         title: "Mydilsa LG PWA",
         description: "Mobile-Compatible Website emphasizing accessibility and user engagement.",
         longDescription: "Developed mobile-first responsive platform emphasizing accessibility and user engagement. Led implementation of Progressive Web App features including offline functionality and push notifications. Optimized loading performance through image compression and lazy loading, reducing initial load time by 40%. Achieved 35% improvement in user engagement through enhanced UI/UX design and A/B testing.",
@@ -243,9 +233,9 @@ export const portfolioData: Record<Language, PortfolioContent> = {
       },
       {
         title: "Girokiq – Infinite Canvas Note-Taking App",
-        description: "Modern browser-based note-taking platform designed for fast, fluid handwriting and diagram creation.",
-        longDescription: "Developed a browser-based infinite canvas note-taking application focused on performance and fluid handwriting. Implemented optimized stroke rendering and efficient data structures to support thousands of strokes while maintaining smooth interaction. Designed a minimal interface for distraction-free writing and deployed the platform on scalable cloud infrastructure.",
-        techStack: ["Web Application", "Canvas Rendering", "Performance Optimization", "UX/UI Design", "Cloud Deployment", "Real-Time Drawing Engine", "Infinite Canvas Architecture", "Frontend Engineering"],
+        description: "Actively developing GirokIQ, an iPad-native note-taking app inspired by GoodNotes.",
+        longDescription: "Designed and built GirokIQ, an iPad-native note-taking app inspired by GoodNotes. Implemented a hybrid canvas architecture combining PencilKit ink strokes with a custom block system supporting repositionable image and text elements. Engineered gesture recognizers for drag, resize, and lasso selection across heterogeneous canvas content. Integrated Supabase for authentication, cloud persistence, and row-level security. Stack: SwiftUI, UIKit, PencilKit, Swift Concurrency, Supabase.",
+        techStack: ["SwiftUI", "UIKit", "PencilKit", "Swift Concurrency", "Supabase", "Gesture Recognizers", "Hybrid Canvas Architecture", "Cloud Persistence (RLS)"],
         link: "https://girokiq.app",
         github: "#",
         image: "/GirokIQ.png",
@@ -318,14 +308,14 @@ export const portfolioData: Record<Language, PortfolioContent> = {
       fullstack: {
         title: "Desarrollador Full-Stack & Ing. ML",
         tagline: "Construyo sistemas inteligentes y productos escalables.",
-        resumeLink: "/resumes/Hector%20Leal%20Fullstack%20CV.pdf",
+        resumeLink: "/resumes/Hector%20Leal%20CV.pdf",
         summary: "Estudiante de Ingeniería de Software con más de 3 años de experiencia creando aplicaciones web escalables y sistemas de producción con React y TypeScript.",
         philosophy: "Me enfoco en el rendimiento, UX y escalabilidad. Mi enfoque combina principios rigurosos de ingeniería con estética de diseño moderno para crear productos que no solo funcionan impecablemente sino que también deleitan a los usuarios."
       },
       frontend: {
         title: "Desarrollador Frontend",
         tagline: "Creo experiencias de usuario de alto rendimiento y píxel-perfectas.",
-        resumeLink: "/resumes/Hector%20Leal%20Fullstack%20CV.pdf",
+        resumeLink: "/resumes/Hector%20Leal%20CV.pdf",
         summary: "Desarrollador Frontend especializado en la creación de interfaces web accesibles, responsivas y de alto rendimiento utilizando el ecosistema React y CSS moderno.",
         philosophy: "La experiencia del usuario es primordial. Creo en escribir código semántico y accesible que proporcione la mejor experiencia posible para todos los usuarios, independientemente de su dispositivo o capacidades."
       }
@@ -352,16 +342,6 @@ export const portfolioData: Record<Language, PortfolioContent> = {
         tags: ["fullstack", "frontend"]
       },
       {
-        title: "SnapLink",
-        description: "Sistema de gestión de URLs de alto rendimiento con capacidades avanzadas de análisis.",
-        longDescription: "Ingenié un sistema de gestión de URLs de alto rendimiento con capacidades analíticas avanzadas. Implementé mecanismos de caché Redis y optimización de consultas a base de datos, logrando una reducción de latencia del 60%. Diseñé una arquitectura escalable soportando procesamiento masivo de URLs para 1000+ operaciones concurrentes. Colaboré con el equipo de UX para crear un dashboard analítico intuitivo.",
-        techStack: ["Redis", "Optimización BD", "Arquitectura Escalable", "Analytics"],
-        link: "https://link-shortener-rouge-omega.vercel.app/",
-        github: "https://github.com/no-c-123/link-shortener",
-        image: "/snaplink.png",
-        tags: ["fullstack"]
-      },
-      {
         title: "Mydilsa LG PWA",
         description: "Sitio web compatible con móviles enfatizando accesibilidad y compromiso del usuario.",
         longDescription: "Desarrollé una plataforma responsiva mobile-first enfatizando accesibilidad. Lideré la implementación de características PWA incluyendo funcionalidad offline y notificaciones push. Optimicé el rendimiento de carga mediante compresión de imágenes y lazy loading, reduciendo el tiempo de carga inicial en un 40%. Logré una mejora del 35% en el compromiso del usuario mediante diseño UI/UX mejorado.",
@@ -373,9 +353,9 @@ export const portfolioData: Record<Language, PortfolioContent> = {
       },
       {
         title: "Girokiq – Infinite Canvas Note-Taking App",
-        description: "Modern browser-based note-taking platform designed for fast, fluid handwriting and diagram creation.",
-        longDescription: "Developed a high-performance web application for visual note-taking using an infinite canvas architecture. Girokiq allows users to freely write, sketch, and organize ideas in a fluid workspace optimized for long sessions and thousands of strokes. Implemented real-time stroke rendering, canvas virtualization, and efficient stroke data management to maintain smooth performance even with large drawings. Designed a minimal and distraction-free interface focused on productivity, with responsive interaction handling for stylus, trackpad, and mouse input. Built using modern web technologies and deployed through scalable cloud infrastructure to ensure reliability and fast global access.\n\n⚡ Key Impact: Smooth infinite-canvas performance & scalable drawing architecture",
-        techStack: ["Web Application", "Canvas Rendering", "Performance Optimization", "UX/UI Design", "Cloud Deployment", "Real-Time Drawing Engine", "Infinite Canvas Architecture", "Frontend Engineering"],
+        description: "Desarrollo activamente GirokIQ, una app nativa para iPad inspirada en GoodNotes.",
+        longDescription: "Diseñé y construí GirokIQ, una app nativa para iPad inspirada en GoodNotes. Implementé una arquitectura híbrida de canvas que combina trazos de tinta con PencilKit y un sistema de bloques personalizado con elementos de texto e imagen reposicionables. Construí recognizers de gestos para arrastrar, redimensionar y selección tipo lasso sobre contenido heterogéneo del canvas. Integré Supabase para autenticación, persistencia en la nube y seguridad a nivel de fila (RLS). Stack: SwiftUI, UIKit, PencilKit, Swift Concurrency, Supabase.",
+        techStack: ["SwiftUI", "UIKit", "PencilKit", "Swift Concurrency", "Supabase", "Gesture Recognizers", "Hybrid Canvas Architecture", "Cloud Persistence (RLS)"],
         link: "https://girokiq.app",
         github: "#",
         image: "/GirokIQ.png",
