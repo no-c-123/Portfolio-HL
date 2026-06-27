@@ -13,17 +13,16 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, resum
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(22,21,18,0.42)] p-4 backdrop-blur-sm">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full max-w-4xl h-[85vh] bg-surface rounded-2xl border border-white/10 shadow-2xl flex flex-col"
+            className="paper-panel relative flex h-[85vh] w-full max-w-4xl flex-col overflow-hidden"
           >
-            {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-white/10">
-              <h2 className="text-xl font-bold flex items-center gap-2">
+            <div className="flex items-center justify-between border-b border-[rgba(140,133,118,0.18)] p-4">
+              <h2 className="flex items-center gap-2 text-xl">
                 <FileText className="text-primary" />
                 Resume Preview
               </h2>
@@ -32,7 +31,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, resum
                   href={resumeUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer h-8 px-3 text-xs border border-white/10 bg-white/5 hover:bg-white/10 hover:text-white text-gray-300 backdrop-blur-sm"
+                  className="inline-flex h-10 items-center justify-center rounded-full border border-[rgba(140,133,118,0.28)] bg-white/75 px-4 text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--color-foreground)] transition-colors hover:bg-white"
                   download
                 >
                   <Download className="mr-2 h-4 w-4" />
@@ -40,18 +39,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, resum
                 </a>
                 <button 
                   onClick={onClose}
-                  className="p-2 rounded-full hover:bg-white/10 transition-colors text-gray-400 hover:text-white"
+                  className="rounded-full p-2 text-[color:var(--color-muted)] transition-colors hover:bg-black/5 hover:text-[color:var(--color-foreground)]"
                 >
                   <X size={20} />
                 </button>
               </div>
             </div>
 
-            {/* PDF Viewer */}
-            <div className="flex-1 bg-white/5 p-4 overflow-hidden rounded-b-2xl">
+            <div className="flex-1 overflow-hidden bg-[rgba(243,238,228,0.7)] p-4">
               <iframe 
                 src={`${resumeUrl}#toolbar=0`}
-                className="w-full h-full rounded-lg border border-white/10 bg-white"
+                className="h-full w-full rounded-[1.25rem] border border-[rgba(140,133,118,0.18)] bg-white"
                 title="Resume PDF"
               />
             </div>

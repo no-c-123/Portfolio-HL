@@ -1,40 +1,88 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #3b82f6;
-  --color-secondary: #a855f7;
-  --color-accent: #14b8a6;
-  
-  --color-background: #030014;
-  --color-surface: #0f172a;
-  --color-surface-hover: #1e293b;
-  
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --color-primary: #c8a24c;
+  --color-secondary: #9c7a2e;
+  --color-accent: #161512;
+
+  --color-background: #faf8f2;
+  --color-surface: #f3eee4;
+  --color-surface-hover: #ede6d8;
+  --color-foreground: #161512;
+  --color-muted: #8c8576;
+  --color-divider: #d8d0c1;
+
+  --font-sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     background-color: var(--color-background);
-    color: #ffffff;
+    color: var(--color-foreground);
     font-family: var(--font-sans);
   }
 
   body {
-    @apply antialiased overflow-x-hidden selection:bg-primary/30 selection:text-white;
+    @apply antialiased overflow-x-hidden selection:bg-primary/25 selection:text-black;
+    background:
+      linear-gradient(to right, transparent 0, transparent calc(100% - 1px), rgba(140, 133, 118, 0.1) calc(100% - 1px)),
+      linear-gradient(to bottom, rgba(140, 133, 118, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 4.75rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    color: var(--color-foreground);
+  }
+
+  a {
+    color: inherit;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+    background-image: linear-gradient(120deg, var(--color-accent), var(--color-secondary));
+    @apply bg-clip-text text-transparent;
   }
-  
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+
+  .surface-card {
+    @apply rounded-[1.75rem] border bg-white/70 shadow-[0_18px_50px_rgba(22,21,18,0.06)];
+    border-color: rgba(140, 133, 118, 0.28);
+    backdrop-filter: blur(12px);
   }
-  
-  .glass-card {
-    @apply bg-surface/50 backdrop-blur-md border border-white/5 hover:border-white/10 transition-all duration-300;
+
+  .subtle-divider {
+    border-color: rgba(140, 133, 118, 0.28);
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.22em];
+    border-color: rgba(156, 122, 46, 0.25);
+    color: var(--color-secondary);
+    background-color: rgba(200, 162, 76, 0.08);
+  }
+
+  .section-title {
+    @apply text-4xl leading-none md:text-6xl;
+  }
+
+  .muted-copy {
+    color: var(--color-muted);
+  }
+
+  .paper-panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 248, 242, 0.88));
+    @apply rounded-[2rem] border shadow-[0_22px_60px_rgba(22,21,18,0.06)];
+    border-color: rgba(140, 133, 118, 0.24);
   }
 }

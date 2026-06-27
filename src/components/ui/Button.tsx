@@ -18,25 +18,24 @@ export const Button: React.FC<ButtonProps> = ({
   children, 
   ...props 
 }) => {
-  const baseStyles = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
+  const baseStyles = "inline-flex items-center justify-center rounded-full border font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
   
   const variants = {
-    primary: "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20",
-    secondary: "bg-secondary text-white hover:bg-secondary/90 shadow-lg shadow-secondary/20",
-    outline: "border border-white/10 bg-white/5 hover:bg-white/10 hover:text-white text-gray-300 backdrop-blur-sm",
-    ghost: "hover:bg-white/10 text-gray-300 hover:text-white"
+    primary: "border-primary bg-primary text-[color:var(--color-accent)] hover:bg-secondary hover:border-secondary",
+    secondary: "border-secondary bg-secondary text-white hover:opacity-95",
+    outline: "border-[rgba(140,133,118,0.35)] bg-white/60 text-[color:var(--color-foreground)] hover:bg-white",
+    ghost: "border-transparent bg-transparent text-[color:var(--color-muted)] hover:bg-black/5 hover:text-[color:var(--color-foreground)]"
   };
   
   const sizes = {
-    sm: "h-8 px-3 text-xs",
-    md: "h-10 px-4 py-2 text-sm",
-    lg: "h-12 px-8 text-base"
+    sm: "h-10 px-4 text-xs tracking-[0.14em] uppercase",
+    md: "h-11 px-5 text-sm",
+    lg: "h-12 px-6 text-sm tracking-[0.16em] uppercase"
   };
 
-  const Component = href ? motion.a : motion.button;
   const motionProps = {
-    whileHover: { scale: 1.02 },
-    whileTap: { scale: 0.98 }
+    whileHover: { y: -1 },
+    whileTap: { scale: 0.99 }
   };
 
   const combinedClassName = cn(baseStyles, variants[variant], sizes[size], className);
